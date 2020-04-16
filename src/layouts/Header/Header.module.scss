@@ -1,0 +1,13 @@
+.Header {
+  display: flex;
+  font-size: 18px;
+  :global {
+    .ant-menu {
+      font-size: 18px;
+      .anticon-github {
+        font-size: 20px;
+        margin: 0;
+      }
+    }
+  }
+}

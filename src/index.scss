@@ -1,6 +1,16 @@
 @import '~bootstrap-utilities';
 
+html{
+  background-color: #282c34;
+}
+
+body{
+  margin:0
+}
+
 #root {
   height: 100%;
+  min-height: 100vh;
   min-width: 300px;
+  color: #FFF
 }
