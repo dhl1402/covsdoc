@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/covsdoc/static/css/main.c6da34dd.chunk.css",
-    "main.js": "/covsdoc/static/js/main.28b8e534.chunk.js",
-    "main.js.map": "/covsdoc/static/js/main.28b8e534.chunk.js.map",
+    "main.js": "/covsdoc/static/js/main.af66f447.chunk.js",
+    "main.js.map": "/covsdoc/static/js/main.af66f447.chunk.js.map",
     "runtime-main.js": "/covsdoc/static/js/runtime-main.db915fad.js",
     "runtime-main.js.map": "/covsdoc/static/js/runtime-main.db915fad.js.map",
     "static/css/2.5d72125e.chunk.css": "/covsdoc/static/css/2.5d72125e.chunk.css",
     "static/js/2.087bf125.chunk.js": "/covsdoc/static/js/2.087bf125.chunk.js",
     "static/js/2.087bf125.chunk.js.map": "/covsdoc/static/js/2.087bf125.chunk.js.map",
     "index.html": "/covsdoc/index.html",
-    "precache-manifest.baa2c87736b1618421098a0d60284a75.js": "/covsdoc/precache-manifest.baa2c87736b1618421098a0d60284a75.js",
+    "precache-manifest.a373bdd24662872aad58bfe4386c7793.js": "/covsdoc/precache-manifest.a373bdd24662872aad58bfe4386c7793.js",
     "service-worker.js": "/covsdoc/service-worker.js",
     "static/css/2.5d72125e.chunk.css.map": "/covsdoc/static/css/2.5d72125e.chunk.css.map",
     "static/css/main.c6da34dd.chunk.css.map": "/covsdoc/static/css/main.c6da34dd.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.5d72125e.chunk.css",
     "static/js/2.087bf125.chunk.js",
     "static/css/main.c6da34dd.chunk.css",
-    "static/js/main.28b8e534.chunk.js"
+    "static/js/main.af66f447.chunk.js"
   ]
 }
