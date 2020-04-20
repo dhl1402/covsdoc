@@ -10,27 +10,21 @@ import 'ace-builds/src-noconflict/theme-nord_dark';
 
 import styles from './Editor.module.scss';
 
-const example = `func sayHello(name) {
-    echo("Hello world, my name is", name, "!!!")
-}
-
-sayHello("nCovi")`;
-
-const Editor = ({ className }) => {
-  const [script, setScript] = useState(example);
-  const [response, setResponse] = useState({ error: '', msg: '' });
+const Editor = ({ className, defaultScript, readOnly }) => {
+  const [script, setScript] = useState(defaultScript);
+  const [response, setResponse] = useState({ error: '', message: '' });
   const [running, setRunning] = useState(false);
 
   const run = async () => {
     try {
       setRunning(true);
-      setResponse({ error: '', msg: '' });
-      const res = await fetch('https://covsplayground.herokuapp.com/api/v1/interpret', {
+      setResponse({ error: '', message: '' });
+      const res = await fetch('https://covidscript.herokuapp.com/api/v1/interpret', {
         method: 'POST',
         body: JSON.stringify({ script }),
       });
       const resJSON = await res.json();
-      setResponse({ error: resJSON.Error, msg: resJSON.Response });
+      setResponse({ error: resJSON.Error, message: resJSON.Response });
     } catch (e) {
       setResponse({ error: e.message });
     } finally {
@@ -39,11 +33,13 @@ const Editor = ({ className }) => {
   };
 
   const format = () => {
-    setScript(js(script), { indent_size: 2, space_in_empty_paren: true });
+    const beautifiedScript = js(script, { indent_size: 2, space_in_empty_paren: true });
+    setScript(beautifiedScript.replace(/: =/g, ' :='));
   };
 
   const reset = () => {
-    setScript(example);
+    setScript(defaultScript);
+    setResponse({ error: '', message: '' });
   };
 
   return (
@@ -56,30 +52,55 @@ const Editor = ({ className }) => {
           tabSize={2}
           fontSize={14}
           showPrintMargin={false}
+          readOnly={readOnly}
+          highlightActiveLine={false}
+          scrollMargin={[14]}
           value={script}
           onChange={setScript}
         />
-        <div className="output">
-          {running && <div>Waiting for remote server...</div>}
-          {response.error && <div className="error">{response.error}</div>}
-          {response.msg && (
-            <div>
-              <div>{response.msg}</div>
-              <div className="note">Program exited.</div>
+        {!readOnly && (
+          <>
+            <div className="output">
+              {running && <div>Waiting for remote server...</div>}
+              {response.error && <div className="error">{response.error}</div>}
+              {response.message && (
+                <div>
+                  <div>{response.message}</div>
+                  <div className="note">Program exited.</div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
-      <div className="mt-3">
-        <Button type="primary" onClick={run} loading={running} icon={<CaretRightFilled />}>
-          Run
-        </Button>
-        <Button className="ml-2" onClick={format} type="primary" icon={<ClearOutlined />}>
-          Format
-        </Button>
-        <Button className="ml-2" onClick={reset} type="primary" icon={<ReloadOutlined />}>
-          Reset
-        </Button>
+            <div className="action">
+              <Button
+                type="primary"
+                shape="round"
+                onClick={run}
+                loading={running}
+                icon={<CaretRightFilled />}
+              >
+                Run
+              </Button>
+              <Button
+                className="ml-2"
+                shape="round"
+                onClick={format}
+                type="primary"
+                icon={<ClearOutlined />}
+              >
+                Format
+              </Button>
+              <Button
+                className="ml-2"
+                shape="round"
+                onClick={reset}
+                type="primary"
+                icon={<ReloadOutlined />}
+              >
+                Reset
+              </Button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
