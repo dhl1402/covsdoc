@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/covsdoc/static/css/main.c6da34dd.chunk.css",
-    "main.js": "/covsdoc/static/js/main.b7b4cae8.chunk.js",
-    "main.js.map": "/covsdoc/static/js/main.b7b4cae8.chunk.js.map",
+    "main.css": "/covsdoc/static/css/main.55636afd.chunk.css",
+    "main.js": "/covsdoc/static/js/main.6c2ded35.chunk.js",
+    "main.js.map": "/covsdoc/static/js/main.6c2ded35.chunk.js.map",
     "runtime-main.js": "/covsdoc/static/js/runtime-main.db915fad.js",
     "runtime-main.js.map": "/covsdoc/static/js/runtime-main.db915fad.js.map",
-    "static/css/2.5d72125e.chunk.css": "/covsdoc/static/css/2.5d72125e.chunk.css",
-    "static/js/2.087bf125.chunk.js": "/covsdoc/static/js/2.087bf125.chunk.js",
-    "static/js/2.087bf125.chunk.js.map": "/covsdoc/static/js/2.087bf125.chunk.js.map",
+    "static/css/2.7be65880.chunk.css": "/covsdoc/static/css/2.7be65880.chunk.css",
+    "static/js/2.6f7567af.chunk.js": "/covsdoc/static/js/2.6f7567af.chunk.js",
+    "static/js/2.6f7567af.chunk.js.map": "/covsdoc/static/js/2.6f7567af.chunk.js.map",
     "index.html": "/covsdoc/index.html",
-    "precache-manifest.c288e397f79b046bbbf2118d30b74511.js": "/covsdoc/precache-manifest.c288e397f79b046bbbf2118d30b74511.js",
+    "precache-manifest.f56da4a2255592a039564e2f5945a52f.js": "/covsdoc/precache-manifest.f56da4a2255592a039564e2f5945a52f.js",
     "service-worker.js": "/covsdoc/service-worker.js",
-    "static/css/2.5d72125e.chunk.css.map": "/covsdoc/static/css/2.5d72125e.chunk.css.map",
-    "static/css/main.c6da34dd.chunk.css.map": "/covsdoc/static/css/main.c6da34dd.chunk.css.map",
-    "static/js/2.087bf125.chunk.js.LICENSE.txt": "/covsdoc/static/js/2.087bf125.chunk.js.LICENSE.txt"
+    "static/css/2.7be65880.chunk.css.map": "/covsdoc/static/css/2.7be65880.chunk.css.map",
+    "static/css/main.55636afd.chunk.css.map": "/covsdoc/static/css/main.55636afd.chunk.css.map",
+    "static/js/2.6f7567af.chunk.js.LICENSE.txt": "/covsdoc/static/js/2.6f7567af.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/covsdoc/static/media/logo.64c7541c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.db915fad.js",
-    "static/css/2.5d72125e.chunk.css",
-    "static/js/2.087bf125.chunk.js",
-    "static/css/main.c6da34dd.chunk.css",
-    "static/js/main.b7b4cae8.chunk.js"
+    "static/css/2.7be65880.chunk.css",
+    "static/js/2.6f7567af.chunk.js",
+    "static/css/main.55636afd.chunk.css",
+    "static/js/main.6c2ded35.chunk.js"
   ]
 }
