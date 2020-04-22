@@ -3,21 +3,15 @@ import React from 'react';
 import { MainLayout } from 'layouts';
 import { Editor } from 'components';
 
-import styles from './Playground.module.scss';
+import examples from 'examples';
 
-const exampleScript = `func saySomething(message) {
-  return func(to) {
-    echo(message, to)
-  }
-}
-saySomethingTo := saySomething("Hello")
-saySomethingTo("World")`;
+import styles from './Playground.module.scss';
 
 const Playground = () => {
   return (
     <MainLayout>
       <div className={styles.Playground}>
-        <Editor className="p-3" defaultScript={exampleScript} />
+        <Editor className="p-3" defaultScript={examples.closure.trim()} />
       </div>
     </MainLayout>
   );

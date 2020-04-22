@@ -1,0 +1,79 @@
+.gist {
+  :global {
+    .gist-file,
+    .gist-data {
+      border: none !important;
+      color: rgba(255, 255, 255, 0.8);
+      background-color: transparent !important;
+    }
+    .gist-meta {
+      display: none;
+    }
+    .readme {
+      padding: 0 !important;
+    }
+    .markdown-body {
+      padding: 0 !important;
+      font-size: 1rem !important;
+      div,
+      p,
+      li,
+      code,
+      table {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      code {
+        background-color: #363e4d !important;
+      }
+      .highlight {
+        background-color: #363e4d !important;
+      }
+      pre {
+        background-color: #363e4d !important;
+        font-size: 14px !important;
+        span {
+          font-size: 14px !important;
+        }
+        .pl-ii {
+          color: #a6a6a6;
+          background-color: unset !important;
+        }
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: #fff;
+        border: none !important;
+      }
+      h1 {
+        font-size: 38px !important;
+      }
+      h2 {
+        font-size: 30px !important;
+      }
+      h3 {
+        font-size: 24px !important;
+      }
+      h4 {
+        font-size: 20px !important;
+      }
+      p,
+      div,
+      span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      table thead div {
+        width: 200px;
+      }
+      .anchor {
+        display: none;
+      }
+      hr {
+        height: 1px !important;
+      }
+    }
+  }
+}

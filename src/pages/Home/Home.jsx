@@ -5,26 +5,20 @@ import { Button, Row, Col, Divider } from 'antd';
 import { MainLayout } from 'layouts';
 import { Editor } from 'components';
 
+import examples from 'examples';
+
 import logo from 'assets/logo.png';
 import styles from './Home.module.scss';
-
-const script = `func saySomething(message) {
-  return func(to) {
-    echo(message, to)
-  }
-}
-saySomethingTo := saySomething("Hello")
-saySomethingTo("World")`;
 
 const Home = () => {
   return (
     <MainLayout>
       <div className={styles.Home}>
         <img src={logo} alt="logo" className="logo" />
-        <h2 className="intro">A dynamic type, interpret and useless language</h2>
+        <h2 className="intro">A dynamically typed, interpreted and useless language</h2>
         <Row gutter={32}>
           <Col flex={1} className="mb-3">
-            <Editor className="demo" readOnly defaultScript={script} />
+            <Editor className="demo" readOnly height={160} defaultScript={examples.closure.trim()} />
           </Col>
           <Col flex={1}>
             <div className="entries">

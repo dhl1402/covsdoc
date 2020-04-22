@@ -10,7 +10,7 @@ import 'ace-builds/src-noconflict/theme-nord_dark';
 
 import styles from './Editor.module.scss';
 
-const Editor = ({ className, defaultScript, readOnly }) => {
+const Editor = ({ className, defaultScript, readOnly, height }) => {
   const [script, setScript] = useState(defaultScript);
   const [response, setResponse] = useState({ error: '', message: '' });
   const [running, setRunning] = useState(false);
@@ -34,7 +34,7 @@ const Editor = ({ className, defaultScript, readOnly }) => {
 
   const format = () => {
     const beautifiedScript = js(script, { indent_size: 2, space_in_empty_paren: true });
-    setScript(beautifiedScript.replace(/: =/g, ' :='));
+    setScript(beautifiedScript.replace(/: =/g, ' :=').replace(/}\nelif/, '} elif'));
   };
 
   const reset = () => {
@@ -49,11 +49,12 @@ const Editor = ({ className, defaultScript, readOnly }) => {
           mode="javascript"
           theme="nord_dark"
           width="100%"
+          height={height}
           tabSize={2}
           fontSize={14}
           showPrintMargin={false}
           readOnly={readOnly}
-          highlightActiveLine={false}
+          highlightActiveLine={!readOnly}
           scrollMargin={[14]}
           value={script}
           onChange={setScript}
@@ -63,7 +64,7 @@ const Editor = ({ className, defaultScript, readOnly }) => {
             <div className="output">
               {running && <div>Waiting for remote server...</div>}
               {response.error && <div className="error">{response.error}</div>}
-              {response.message && (
+              {(response.message && !response.error) && (
                 <div>
                   <div>{response.message}</div>
                   <div className="note">Program exited.</div>

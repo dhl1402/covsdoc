@@ -6,11 +6,13 @@ import Header from '../Header/Header';
 
 import styles from './MainLayout.module.scss';
 
+const { Content } = Layout;
+
 const MainLayout = ({ children, className }) => {
   return (
     <Layout className={classNames(styles.MainLayout, className)}>
       <Header />
-      {children}
+      <Content>{children}</Content>
     </Layout>
   );
 };

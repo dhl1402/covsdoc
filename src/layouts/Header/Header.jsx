@@ -16,7 +16,9 @@ const Header = () => {
       </div>
       <div className="menu">
         <Menu theme="dark" mode="horizontal">
-          <Menu.Item>Documents</Menu.Item>
+          <Menu.Item>
+            <Link to="/documents">Documents</Link>
+          </Menu.Item>
           <Menu.Item>
             <a
               target="_blank"

@@ -13,6 +13,7 @@ module.exports = override(
       '@layout-body-background': '#282c34',
       '@layout-header-background': '#1D2025',
       '@text-color': '#FFF',
+      '@heading-color': '#FFF',
     },
   }),
 );
