@@ -18,7 +18,7 @@ const Home = () => {
         <h2 className="intro">A dynamically typed, interpreted and useless language</h2>
         <Row gutter={32}>
           <Col flex={1} className="mb-3">
-            <Editor className="demo" readOnly height={160} defaultScript={examples.closure.trim()} />
+            <Editor className="demo" animate readOnly height={160} defaultScript={examples.closure.trim()} />
           </Col>
           <Col flex={1}>
             <div className="entries">

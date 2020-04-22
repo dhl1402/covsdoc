@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AceEditor from 'react-ace';
 import { Button } from 'antd';
 import { CaretRightFilled, ClearOutlined, ReloadOutlined } from '@ant-design/icons';
@@ -10,10 +10,21 @@ import 'ace-builds/src-noconflict/theme-nord_dark';
 
 import styles from './Editor.module.scss';
 
-const Editor = ({ className, defaultScript, readOnly, height }) => {
-  const [script, setScript] = useState(defaultScript);
+const Editor = ({ className, animate, defaultScript, readOnly, height }) => {
+  const [script, setScript] = useState(animate ? '' : defaultScript);
   const [response, setResponse] = useState({ error: '', message: '' });
   const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    if (animate && readOnly && script !== defaultScript) {
+      const handle = setTimeout(() => {
+        requestAnimationFrame(() => {
+          setScript(defaultScript.substring(0, script.length + 1));
+        });
+      }, 20);
+      return () => clearTimeout(handle);
+    }
+  }, [defaultScript, script, animate, readOnly]);
 
   const run = async () => {
     try {
@@ -64,7 +75,7 @@ const Editor = ({ className, defaultScript, readOnly, height }) => {
             <div className="output">
               {running && <div>Waiting for remote server...</div>}
               {response.error && <div className="error">{response.error}</div>}
-              {(response.message && !response.error) && (
+              {response.message && !response.error && (
                 <div>
                   <div>{response.message}</div>
                   <div className="note">Program exited.</div>

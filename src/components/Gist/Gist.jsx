@@ -14,6 +14,7 @@ let addedStyle = false;
 const Gist = ({ className, id, fileName, onShow }) => {
   const [content, setContent] = useTempState('', [id, fileName]);
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const callback = `gist_callback_${(gistCallbackId += 1)}`;
     window[callback] = ({ div, stylesheet }) => {
