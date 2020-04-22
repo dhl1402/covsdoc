@@ -17,6 +17,11 @@ const Header = () => {
       <div className="menu">
         <Menu theme="dark" mode="horizontal">
           <Menu.Item>
+            <Link to="/documents/examples">
+              Examples
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
             <Link to="/documents">Documents</Link>
           </Menu.Item>
           <Menu.Item>

@@ -7,11 +7,12 @@ import DataTypes from './DataTypes';
 import FunctionsAndClosure from './FunctionsAndClosure';
 import ControlFlow from './ControlFlow';
 import BuiltinFunctions from './BuiltinFunctions';
+import Examples from './Examples';
 
 import styles from './Documents.module.scss';
 
 const routes = [
-  { title: 'Introduction', path: '/documents/introduction' },
+  // { title: 'Introduction', path: '/documents/introduction' },
   { title: 'Installation', path: '/documents/installation' },
   { title: 'Variables', path: '/documents/variables' },
   { title: 'Data Types', path: '/documents/data-types' },
@@ -28,6 +29,7 @@ const docs = [
   { key: 'functions-and-closures', render: () => <FunctionsAndClosure /> },
   { key: 'control-flow', render: () => <ControlFlow /> },
   { key: 'builtin-functions', render: () => <BuiltinFunctions /> },
+  { key: 'examples', render: () => <Examples /> },
 ];
 
 const Documents = ({ location, match }) => {

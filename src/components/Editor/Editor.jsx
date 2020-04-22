@@ -75,7 +75,7 @@ const Editor = ({ className, animate, defaultScript, readOnly, height }) => {
             <div className="output">
               {running && <div>Waiting for remote server...</div>}
               {response.error && <div className="error">{response.error}</div>}
-              {response.message && !response.error && (
+              {response.message && (
                 <div>
                   <div>{response.message}</div>
                   <div className="note">Program exited.</div>

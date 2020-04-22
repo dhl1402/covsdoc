@@ -256,4 +256,71 @@ echo("newObj:", newObj)
   neg: `
 echo(1 + neg(1))
 `,
+  helloworld: `
+echo("Hello",  "World", "!!!")
+`,
+  binarySearch: `
+input := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+binarySearch := func(arr, target) {
+  recursiveSearch := func(arr, target, start, end) {
+    if start > end {
+      return neg(1)
+    }
+    if mid := floor((start + end) / 2); arr[mid] == target {
+      return mid
+    } elif arr[mid] > target {
+      return recursiveSearch(arr, target, start, mid - 1);
+    } else {
+      return recursiveSearch(arr, target, mid + 1, end);
+    }
+  }
+  return recursiveSearch(arr, target, 0, len(arr) - 1)
+}
+
+echo(binarySearch(input, 3))
+`,
+  mergeSort: `
+input := [23, 4, 42, 15, 16, 8, 3]
+
+mergeSort :=func(arr) {
+  if len(arr) <= 1 {
+    return arr
+  }
+  middle := len(arr) / 2 ;
+  left := slice(arr, 0, middle)
+  right := slice(arr, len(arr))
+  return merge(mergeSort(left), mergeSort(right))
+}
+
+slice := func(arr, start, end) {
+  return filter(arr, func(_, index) {
+    return index >= start && index < end
+  })
+}
+
+merge := func(left, right) {
+  result := []
+  for len(left) || len(right) {
+    if len(left) && len(right) {
+      if left[0] < right[0] {
+        result = append(result, left[0])
+        left = delete(left, 0)
+      } else {
+        result = append(result, right[0])
+        right = delete(right, 0)
+      }
+    } elif len(left) {
+      result = append(result, left[0])
+      left = delete(left, 0)
+    } else {
+      result = append(result, right[0])
+      right = delete(right, 0)
+    }
+  }
+  return result
+}
+
+echo(mergeSort(input))
+`,
 };
