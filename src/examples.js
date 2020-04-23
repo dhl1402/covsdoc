@@ -260,8 +260,6 @@ echo(1 + neg(1))
 echo("Hello",  "World", "!!!")
 `,
   binarySearch: `
-input := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 binarySearch := func(arr, target) {
   recursiveSearch := func(arr, target, start, end) {
     if start > end {
@@ -278,18 +276,17 @@ binarySearch := func(arr, target) {
   return recursiveSearch(arr, target, 0, len(arr) - 1)
 }
 
+input := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 echo(binarySearch(input, 3))
 `,
   mergeSort: `
-input := [23, 4, 42, 15, 16, 8, 3]
-
-mergeSort :=func(arr) {
+mergeSort := func(arr) {
   if len(arr) <= 1 {
     return arr
   }
-  middle := len(arr) / 2 ;
+  middle := len(arr) / 2;
   left := slice(arr, 0, middle)
-  right := slice(arr, len(arr))
+  right := slice(arr, middle, len(arr))
   return merge(mergeSort(left), mergeSort(right))
 }
 
@@ -321,6 +318,8 @@ merge := func(left, right) {
   return result
 }
 
-echo(mergeSort(input))
+input := [23, 4, 42, 15, 16, 8, 3]
+echo("Input:", input)
+echo("Output:", mergeSort(input))
 `,
 };
