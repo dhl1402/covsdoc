@@ -1,19 +1,28 @@
 .Sider {
   min-height: 100vh;
   :global {
-    .sidebar-toggler {
-      position: fixed;
-      top: 80px;
-      left: 0px;
-      border-radius: 0 4px 4px 0;
-      font-size: 20px;
-      padding: 0 12px;
-      height: 40px;
-    }
-    .ant-layout-sider {
-      background-color: #23272d;
-      .ant-menu {
+    .ant-layout-has-sider {
+      position: relative;
+      .ant-layout-sider {
         background-color: #23272d;
+        position: relative;
+        .ant-menu {
+          background-color: #23272d;
+        }
+        .sidebar-toggler {
+          position: absolute;
+          top: 50px;
+          right: -46px;
+          border-radius: 0 4px 4px 0;
+          font-size: 20px;
+          padding: 0 12px;
+          height: 40px;
+        }
+      }
+      .sider-small-screen {
+        position: absolute;
+        z-index: 5;
+        height: 100%;
       }
     }
   }

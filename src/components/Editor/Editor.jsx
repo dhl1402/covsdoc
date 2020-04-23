@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AceEditor from 'react-ace';
-import { Button } from 'antd';
-import { CaretRightFilled, ClearOutlined, ReloadOutlined } from '@ant-design/icons';
+import { Button, Dropdown, Menu } from 'antd';
+import { CaretRightFilled, ClearOutlined, ReloadOutlined, DownOutlined } from '@ant-design/icons';
 import { js } from 'js-beautify';
 import classNames from 'classnames';
 
@@ -53,6 +53,20 @@ const Editor = ({ className, animate, defaultScript, readOnly, height }) => {
     setResponse({ error: '', message: '' });
   };
 
+  const actionMenu = () => (
+    <Menu theme="dark">
+      <Menu.Item onClick={run}>
+        <CaretRightFilled /> Run
+      </Menu.Item>
+      <Menu.Item onClick={format}>
+        <ClearOutlined /> Format
+      </Menu.Item>
+      <Menu.Item onClick={reset}>
+        <ReloadOutlined /> Reset
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <div className={classNames(styles.Editor, className)}>
       <div className="editor">
@@ -82,7 +96,14 @@ const Editor = ({ className, animate, defaultScript, readOnly, height }) => {
                 </div>
               )}
             </div>
-            <div className="action">
+            <div className="action d-md-none">
+              <Dropdown overlay={actionMenu} placement="bottomRight" trigger={['click']}>
+                <Button type="primary" shape="round">
+                  Actions <DownOutlined />
+                </Button>
+              </Dropdown>
+            </div>
+            <div className="action d-none d-md-block">
               <Button
                 type="primary"
                 shape="round"

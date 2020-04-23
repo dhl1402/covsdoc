@@ -33,7 +33,7 @@ const docs = [
 ];
 
 const Documents = ({ location, match }) => {
-  const doc = docs.find(g => g.key === match.params.doc) || docs[0];
+  const doc = docs.find(d => d.key === match.params.doc) || docs[0];
   return (
     <SiderLayout routes={routes} selected={location.pathname}>
       <div className={styles.Documents}>{doc.render()}</div>

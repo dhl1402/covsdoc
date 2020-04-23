@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import classNames from 'classnames';
 
 import Header from '../Header/Header';
@@ -11,18 +11,20 @@ import styles from './SiderLayout.module.scss';
 const { Sider, Content } = Layout;
 
 const SiderLayout = ({ children, className, routes, selected }) => {
-  const [collapsed, setCollapsed] = useState(window.innerWidth < 768);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  const [collapsed, setCollapsed] = useState(isSmallScreen);
+
+  const onBreakpoint = broken => {
+    setIsSmallScreen(broken);
+    setCollapsed(broken);
+  };
 
   return (
     <Layout className={classNames(styles.Sider, className)}>
       <Header />
       <Layout>
-        {collapsed && (
-          <Button className="sidebar-toggler" type="primary" onClick={() => setCollapsed(false)}>
-            <MenuOutlined />
-          </Button>
-        )}
         <Sider
+          className={classNames({ 'sider-small-screen': isSmallScreen })}
           collapsible
           width={250}
           trigger={null}
@@ -30,7 +32,7 @@ const SiderLayout = ({ children, className, routes, selected }) => {
           breakpoint="sm"
           collapsedWidth={0}
           collapsed={collapsed}
-          onBreakpoint={setCollapsed}
+          onBreakpoint={onBreakpoint}
         >
           <Menu mode="inline" theme="dark" selectedKeys={[selected]}>
             {routes.map(r => (
@@ -39,6 +41,16 @@ const SiderLayout = ({ children, className, routes, selected }) => {
               </Menu.Item>
             ))}
           </Menu>
+          {collapsed && (
+            <Button className="sidebar-toggler" type="primary" onClick={() => setCollapsed(false)}>
+              <MenuOutlined />
+            </Button>
+          )}
+          {isSmallScreen && !collapsed && (
+            <Button className="sidebar-toggler" type="primary" onClick={() => setCollapsed(true)}>
+              <CloseOutlined />
+            </Button>
+          )}
         </Sider>
         <Layout>
           <Content>{children}</Content>
