@@ -30,7 +30,7 @@ const Editor = ({ className, animate, defaultScript, readOnly, height }) => {
     try {
       setRunning(true);
       setResponse({ error: '', message: '' });
-      const res = await fetch('https://covidscript.herokuapp.com/api/v1/interpret', {
+      const res = await fetch('http://ec2-13-213-40-148.ap-southeast-1.compute.amazonaws.com/api/v1/interpret', {
         method: 'POST',
         body: JSON.stringify({ script }),
       });
