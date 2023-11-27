@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/covsdoc/static/css/main.429228c9.chunk.css",
+    "main.css": "/covsdoc/static/css/main.c221d971.chunk.css",
     "main.js": "/covsdoc/static/js/main.c51665a7.chunk.js",
     "main.js.map": "/covsdoc/static/js/main.c51665a7.chunk.js.map",
     "runtime-main.js": "/covsdoc/static/js/runtime-main.db915fad.js",
@@ -9,10 +9,10 @@
     "static/js/2.37db57f2.chunk.js": "/covsdoc/static/js/2.37db57f2.chunk.js",
     "static/js/2.37db57f2.chunk.js.map": "/covsdoc/static/js/2.37db57f2.chunk.js.map",
     "index.html": "/covsdoc/index.html",
-    "precache-manifest.66fb8cbedc551edecc29136c74ce968a.js": "/covsdoc/precache-manifest.66fb8cbedc551edecc29136c74ce968a.js",
+    "precache-manifest.4ad34a3a4fc1c39e5d2e929d55b972f2.js": "/covsdoc/precache-manifest.4ad34a3a4fc1c39e5d2e929d55b972f2.js",
     "service-worker.js": "/covsdoc/service-worker.js",
     "static/css/2.2c037eef.chunk.css.map": "/covsdoc/static/css/2.2c037eef.chunk.css.map",
-    "static/css/main.429228c9.chunk.css.map": "/covsdoc/static/css/main.429228c9.chunk.css.map",
+    "static/css/main.c221d971.chunk.css.map": "/covsdoc/static/css/main.c221d971.chunk.css.map",
     "static/js/2.37db57f2.chunk.js.LICENSE.txt": "/covsdoc/static/js/2.37db57f2.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/covsdoc/static/media/logo.64c7541c.png"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.db915fad.js",
     "static/css/2.2c037eef.chunk.css",
     "static/js/2.37db57f2.chunk.js",
-    "static/css/main.429228c9.chunk.css",
+    "static/css/main.c221d971.chunk.css",
     "static/js/main.c51665a7.chunk.js"
   ]
 }
